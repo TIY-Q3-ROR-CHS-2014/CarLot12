@@ -7,6 +7,7 @@ class DealershipsController < ApplicationController
 
   def show
     @dealership = Dealership.find params[:id]
+    @cars = @dealership.cars.includes(:features)
     @comment = @dealership.comments.new
     respond_to do |format|
       format.js

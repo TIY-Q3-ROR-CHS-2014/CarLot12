@@ -10,7 +10,7 @@
 = link_to "Create Car", 'javascript:void(0);', class: "create_car", new_car_path: new_dealership_car_path(@dealership)
 %ul
   /= @dealership.cars.inspect
-  - @dealership.cars.each do |car|
+  - @cars.each do |car|
     %li
       = link_to "#{car.full_name} - #{to_money(car.total_cost)}", dealership_car_path(@dealership, car)
       |
